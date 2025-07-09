@@ -22,5 +22,6 @@ int main()
 		}
 		std::cout << currVal << " occurs " << cnt << " times" << std::endl;
 	}
+	std::cout << "end" << std::endl;
 	return 0;
 }
