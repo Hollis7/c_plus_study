@@ -6,12 +6,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 添加可执行文件
-add_executable(exercise1_20           # 目标名称（可执行文件名）
-    src/ch1/exercise1_20.cpp          # 源文件路径
+add_executable(exercise1_21           # 目标名称（可执行文件名）
+    src/ch1/exercise1_21.cpp          # 源文件路径
 )
 
 # 设置头文件搜索路径
-target_include_directories(exercise1_20
+target_include_directories(exercise1_21
     PRIVATE                           # 私有头文件（仅当前目标可用）
         ${CMAKE_CURRENT_SOURCE_DIR}/include/mylib
 )
