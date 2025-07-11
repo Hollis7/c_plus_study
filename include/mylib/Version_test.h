@@ -43,6 +43,8 @@
  * #define the features implmented in that release.
 */
 
+extern const int bufsize;  // 只声明
+
 #if _MSC_FULL_VER == 170050522 || _MSC_FULL_VER == 170050727 
 // base version, future releases will #define those features as they are
 // implemented by Microsoft
