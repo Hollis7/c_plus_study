@@ -13,7 +13,7 @@ set(MYLIB_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/mylib)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
 # 集中管理目标名称
-set(EXECUTABLE_TARGETS exercise2_4 )
+set(EXECUTABLE_TARGETS exercise2_5 )
 
 # 批量添加可执行文件
 foreach(target ${EXECUTABLE_TARGETS})
