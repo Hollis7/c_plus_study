@@ -13,11 +13,11 @@ set(MYLIB_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/mylib)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
 # 集中管理目标名称
-set(EXECUTABLE_TARGETS exercise2_5 )
+set(EXECUTABLE_TARGETS exercise3 exercise3_17)
 
 # 批量添加可执行文件
 foreach(target ${EXECUTABLE_TARGETS})
-    add_executable(${target} src/ch2/${target}.cpp)
+    add_executable(${target} src/ch3/${target}.cpp)
     target_include_directories(${target} PRIVATE ${MYLIB_INCLUDE_DIR})
     target_compile_options(${target} PRIVATE -g -O0)
 endforeach()
