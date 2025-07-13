@@ -1,12 +1,14 @@
 #include <iostream>
 #include "sales_data.h"
+#include <cctype>
+#include <vector>
 using namespace std;
-
 int main()
 {
-    string s5 = "hiya"; // 拷贝初始化
-    string s6("hiya");  // 直接初始化
-    string s7(10, 'c'); // 直接初始化，s7的内容是cccccccccc
-
+    int ia[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; // ia是一个含有10个整数的数组
+    vector<int> vec1(begin(ia), end(ia));
+    for(auto a:vec1){
+        cout<<a<<endl;
+    }
     return 0;
 }
