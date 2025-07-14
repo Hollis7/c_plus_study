@@ -12,9 +12,13 @@ set(CMAKE_BUILD_TYPE Debug) # 启用调试符号
 set(MYLIB_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/mylib)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
+# 修改1: 为 factMain 添加额外的源文件
+add_executable(factMain src/ch6/factMain.cpp src/ch6/fact.cpp)
+target_include_directories(factMain PRIVATE ${MYLIB_INCLUDE_DIR})
+target_compile_options(factMain PRIVATE -g -O0)
+
 # 集中管理目标名称
 set(EXECUTABLE_TARGETS exercise6 exercise6_10)
-
 # 批量添加可执行文件
 foreach(target ${EXECUTABLE_TARGETS})
     add_executable(${target} src/ch6/${target}.cpp)
