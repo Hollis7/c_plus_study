@@ -1,24 +1,23 @@
 #include <iostream>
 #include <vector>
 #include <string>
-using std::cin;
-using std::cout;
-using std::endl;
-using std::string;
-using std::vector;
+#include <cctype>
+using namespace std;
 
-// 例子
-int count_add(int n) // n是形参
+void correct_num(int num[], const int num_size)
 {
-    static int ctr = 0; // ctr 是局部静态变量
-    ctr += n;
-    return ctr;
+    for (int i = 0; i < num_size; i++)
+        num[i] *= 3;
 }
-
-int main()
+int main(void)
 {
-    for (int i = 0; i != 10; ++i) // i 是局部变量
-        cout << count_add(i)<<" ";
+    int num[10];
+    for (int i = 0; i < 10; i++)
+    {
+        num[i] = i;
+    }
 
+    correct_num(num, 10);
+    cout << num[2] << " " << num[3] << endl;
     return 0;
 }
