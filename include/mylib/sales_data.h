@@ -5,7 +5,7 @@
 struct Sales_data
 {
     // 新成员：关于Sales_data对象的操作
-    std::string isbn() { return bookNo; }
+    std::string isbn() const{ return bookNo; }
     Sales_data &combine(const Sales_data &);
     double avg_price() const;
     std::string bookNo;

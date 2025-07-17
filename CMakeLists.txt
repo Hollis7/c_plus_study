@@ -17,11 +17,16 @@ add_executable(factMain src/ch6/factMain.cpp src/ch6/fact.cpp)
 target_include_directories(factMain PRIVATE ${MYLIB_INCLUDE_DIR})
 target_compile_options(factMain PRIVATE -g -O0)
 
-# 集中管理目标名称
-set(EXECUTABLE_TARGETS  exercise7)
-# 批量添加可执行文件
-foreach(target ${EXECUTABLE_TARGETS})
-    add_executable(${target} src/ch7/${target}.cpp)
-    target_include_directories(${target} PRIVATE ${MYLIB_INCLUDE_DIR})
-    target_compile_options(${target} PRIVATE -g -O0)
-endforeach()
+# 修改1: 为 factMain 添加额外的源文件
+add_executable(exercise7 src/ch7/exercise7.cpp src/ch7/sales_data.cpp)
+target_include_directories(exercise7 PRIVATE ${MYLIB_INCLUDE_DIR})
+target_compile_options(exercise7 PRIVATE -g -O0)
+
+# # 集中管理目标名称
+# set(EXECUTABLE_TARGETS  exercise7)
+# # 批量添加可执行文件
+# foreach(target ${EXECUTABLE_TARGETS})
+#     add_executable(${target} src/ch7/${target}.cpp)
+#     target_include_directories(${target} PRIVATE ${MYLIB_INCLUDE_DIR})
+#     target_compile_options(${target} PRIVATE -g -O0)
+# endforeach()
