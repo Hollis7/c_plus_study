@@ -18,10 +18,10 @@ target_include_directories(factMain PRIVATE ${MYLIB_INCLUDE_DIR})
 target_compile_options(factMain PRIVATE -g -O0)
 
 # 集中管理目标名称
-set(EXECUTABLE_TARGETS exercise6 exercise6_10)
+set(EXECUTABLE_TARGETS  exercise7)
 # 批量添加可执行文件
 foreach(target ${EXECUTABLE_TARGETS})
-    add_executable(${target} src/ch6/${target}.cpp)
+    add_executable(${target} src/ch7/${target}.cpp)
     target_include_directories(${target} PRIVATE ${MYLIB_INCLUDE_DIR})
     target_compile_options(${target} PRIVATE -g -O0)
 endforeach()
