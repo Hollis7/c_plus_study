@@ -3,21 +3,13 @@
 #include <string>
 #include <cctype>
 using namespace std;
-
-void correct_num(int num[], const int num_size)
-{
-    for (int i = 0; i < num_size; i++)
-        num[i] *= 3;
+bool lengthCompare(const string &s1, const string &s2){
+    return (s1.size() < s2.size())? true : false;
 }
+
 int main(void)
 {
-    int num[10];
-    for (int i = 0; i < 10; i++)
-    {
-        num[i] = i;
-    }
-
-    correct_num(num, 10);
-    cout << num[2] << " " << num[3] << endl;
+    cout<<"end"<<endl;
+    
     return 0;
 }
