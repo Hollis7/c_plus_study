@@ -1,9 +1,6 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
-#include <iostream>
-#include <string>
-#include <vector>
 class Screen
 {
 public:
