@@ -13,7 +13,7 @@ public:
     Sales_data(const std::string &s) : bookNo(s) {} // 带参数的构造函数
     Sales_data(const std::string &s, unsigned n, double p)
         : bookNo(s), units_sold(n), revenue(n * p) {}
-    Sales_data(std::istream &is); // 从输入流构造
+    Sales_data(std::istream &is){read(is, *this);} // 使用read函数从输入流初始化} // 从输入流构造
     // 新成员：关于Sales_data对象的操作
     std::string isbn() const { return bookNo; }
     Sales_data &combine(const Sales_data &);

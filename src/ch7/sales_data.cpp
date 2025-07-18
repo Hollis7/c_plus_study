@@ -1,10 +1,6 @@
-#include <iostream>
+#include <iostream>   
 #include "sales_data.h"
 using namespace std;
-Sales_data::Sales_data(std::istream &is)
-{
-    read(is, *this); // 使用read函数从输入流初始化
-}
 
 
 Sales_data &Sales_data::combine(const Sales_data &rhs)
