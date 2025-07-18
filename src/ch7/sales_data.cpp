@@ -1,17 +1,11 @@
 #include <iostream>
 #include "sales_data.h"
 using namespace std;
-double Sales_data::avg_price() const
+Sales_data::Sales_data(std::istream &is)
 {
-    if (units_sold)
-    {
-        return revenue / units_sold;
-    }
-    else
-    {
-        return 0.0; // 避免除以零
-    }
+    read(is, *this); // 使用read函数从输入流初始化
 }
+
 
 Sales_data &Sales_data::combine(const Sales_data &rhs)
 {
