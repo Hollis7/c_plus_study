@@ -6,11 +6,9 @@
 int main()
 {
     Screen myScreen(5, 5, 'X'); // 创建一个5x5的屏幕，初始字符为'X'
-    myScreen.move(2, 3); // 移动光标到第2行第3列
-    std::cout << "Character at cursor: " << myScreen.get() << std::endl; // 获取光标位置的字符
-    std::cout << "Character at (2, 3): " << myScreen.get(2, 3) << std::endl; // 获取指定位置的字符
-    myScreen.move(1, 1); // 移动光标到第1行第1列
-    std::cout << "Character at cursor after move: " << myScreen.get() << std::endl; // 获取
-    
+    const Screen blank(5, 3, 'c');
+    myScreen.set('#').display(std::cout); // 设置光标位置的字符为'#'并显示屏幕内容
+    std::cout << std::endl;
+    blank.display(std::cout); // 显示另一个屏幕内容
     return 0;
 }

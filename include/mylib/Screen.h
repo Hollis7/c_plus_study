@@ -13,12 +13,18 @@ public:
     void some_member() const;
     Screen &set(char c);
     Screen &set(pos r, pos c, char ch);
+    Screen &display(std::ostream &os);
+    const Screen &display(std::ostream &os) const;
 
 private:
     pos cursor = 0;
     pos height = 0, width = 0;
     std::string contents;
     mutable size_t access_ctr = 0; // 可变成员变量，用于跟踪访问次数
+    void do_display(std::ostream &os) const
+    {
+        os << contents; // 显示屏幕内容
+    }
 };
 inline char Screen::get(pos r, pos c) const
 {
@@ -45,6 +51,16 @@ inline Screen &Screen::set(pos r, pos c, char ch)
 {
     contents[r * width + c] = ch; // 设置指定位置的字符
     return *this;                 // 返回当前对象的引用
+}
+Screen &Screen::display(std::ostream &os)
+{
+    do_display(os); // 调用私有成员函数显示内容
+    return *this;   // 返回当前对象的引用
+}
+const Screen &Screen::display(std::ostream &os) const
+{
+    do_display(os); // 调用私有成员函数显示内容
+    return *this;   // 返回当前对象的引用
 }
 class Window_mgr
 {
