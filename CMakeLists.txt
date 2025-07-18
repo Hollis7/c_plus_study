@@ -13,14 +13,21 @@ set(MYLIB_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/mylib)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
 # 修改1: 为 factMain 添加额外的源文件
-add_executable(factMain src/ch6/factMain.cpp src/ch6/fact.cpp)
-target_include_directories(factMain PRIVATE ${MYLIB_INCLUDE_DIR})
-target_compile_options(factMain PRIVATE -g -O0)
+# add_executable(factMain src/ch6/factMain.cpp src/ch6/fact.cpp)
+# target_include_directories(factMain PRIVATE ${MYLIB_INCLUDE_DIR})
+# target_compile_options(factMain PRIVATE -g -O0)
 
-# 修改1: 为 factMain 添加额外的源文件
-add_executable(exercise7 src/ch7/exercise7.cpp src/ch7/sales_data.cpp)
-target_include_directories(exercise7 PRIVATE ${MYLIB_INCLUDE_DIR})
-target_compile_options(exercise7 PRIVATE -g -O0)
+# 修改2: 为 exersise7 添加额外的源文件
+# add_executable(exercise7 src/ch7/exercise7.cpp src/ch7/sales_data.cpp)
+# target_include_directories(exercise7 PRIVATE ${MYLIB_INCLUDE_DIR})
+# target_compile_options(exercise7 PRIVATE -g -O0)
+
+# 修改2: 为 exersise7_1 添加额外的源文件
+add_executable(exercise7_1 src/ch7/exercise7_1.cpp)
+target_include_directories(exercise7_1 PRIVATE ${MYLIB_INCLUDE_DIR})
+target_compile_options(exercise7_1 PRIVATE -g -O0)
+
+
 
 # # 集中管理目标名称
 # set(EXECUTABLE_TARGETS  exercise7)
