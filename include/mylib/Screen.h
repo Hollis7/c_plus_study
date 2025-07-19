@@ -1,10 +1,26 @@
+#ifndef SCREEN_H
+#define SCREEN_H
 // 前向声明
-class Window_mgr;
+class Screen;
+
+class Window_mgr
+{
+public:
+    Window_mgr();                                       // 初始化一个默认屏幕
+    using ScreenIndex = std::vector<Screen>::size_type; // 定义屏幕索引类型
+    void clear(ScreenIndex);                            // 清除指定屏幕的内容
+    Screen &display(ScreenIndex i, std::ostream &os = std::cout);
+    
+
+private:
+    std::vector<Screen> screens; // 存储屏幕对象的向量
+};
 
 class Screen
 {
     // 声明Window_mgr为Screen的友元类
-    friend class Window_mgr;
+    friend void Window_mgr::clear(ScreenIndex);
+    friend Screen &Window_mgr::display(ScreenIndex, std::ostream &);
 
 public:
     typedef std::string::size_type pos;
@@ -30,16 +46,16 @@ private:
     }
 };
 
-class Window_mgr
+Window_mgr::Window_mgr()
+    : screens{Screen(10, 5, '#')} // 初始化一个默认屏幕，大小为24行80列，内容为空格
 {
-public:
-    using ScreenIndex = std::vector<Screen>::size_type; // 定义屏幕索引类型
-    void clear(ScreenIndex);                            // 清除指定屏幕的内容
-
-private:
-    std::vector<Screen> screens{Screen(10, 5, '#')}; // 存储屏幕对象的向量
-};
-
+}
+Screen &Window_mgr::display(ScreenIndex i, std::ostream &os)
+{
+    Screen &s = screens[i]; // 获取指定索引的屏幕
+    s.display(os);          // 调用屏幕的display方法
+    return s;              // 返回屏幕对象的引用
+}
 // 现在可以声明Window_mgr::clear为友元函数
 inline void Window_mgr::clear(ScreenIndex i)
 {
@@ -87,3 +103,4 @@ const Screen &Screen::display(std::ostream &os) const
     do_display(os); // 调用私有成员函数显示内容
     return *this;   // 返回当前对象的引用
 }
+#endif // SCREEN_H
