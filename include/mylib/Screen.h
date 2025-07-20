@@ -10,7 +10,8 @@ public:
     using ScreenIndex = std::vector<Screen>::size_type; // 定义屏幕索引类型
     void clear(ScreenIndex);                            // 清除指定屏幕的内容
     Screen &display(ScreenIndex i, std::ostream &os = std::cout);
-    
+    ScreenIndex addScreen(const Screen &s); // 添加新屏幕并返回索引
+  
 
 private:
     std::vector<Screen> screens; // 存储屏幕对象的向量
@@ -62,6 +63,11 @@ inline void Window_mgr::clear(ScreenIndex i)
     Screen &s = screens[i];                            // 获取指定索引的屏幕
     s.contents = std::string(s.height * s.width, ' '); // 清空屏幕内容
     s.cursor = 0;                                      // 重置光标位置
+}
+Window_mgr::ScreenIndex Window_mgr::addScreen(const Screen &s)
+{
+    screens.push_back(s); // 将新屏幕添加到向量中
+    return screens.size() - 1; // 返回新屏幕的索引
 }
 
 inline char Screen::get(pos r, pos c) const
