@@ -18,9 +18,9 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 # target_compile_options(factMain PRIVATE -g -O0)
 
 # 修改2: 为 exersise7 添加额外的源文件
-# add_executable(exercise7 src/ch7/exercise7.cpp src/ch7/sales_data.cpp)
-# target_include_directories(exercise7 PRIVATE ${MYLIB_INCLUDE_DIR})
-# target_compile_options(exercise7 PRIVATE -g -O0)
+add_executable(exercise7 src/ch7/exercise7.cpp src/ch7/sales_data.cpp)
+target_include_directories(exercise7 PRIVATE ${MYLIB_INCLUDE_DIR})
+target_compile_options(exercise7 PRIVATE -g -O0)
 
 # 修改2: 为 exersise7_1 添加额外的源文件
 add_executable(exercise7_1 src/ch7/exercise7_1.cpp)
