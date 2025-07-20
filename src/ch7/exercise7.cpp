@@ -6,16 +6,20 @@
 using namespace std;
 int main()
 {
-	Sales_data item1;
-	print(std::cout, item1) << std::endl;
+	cout << "1. default way: " << endl;
+	cout << "----------------" << endl;
+	Sales_data s1;
 
-	Sales_data item2("0-201-78345-X");
-	print(std::cout, item2) << std::endl;
+	cout << "\n2. use std::string as parameter: " << endl;
+	cout << "----------------" << endl;
+	Sales_data s2("CPP-Primer-5th");
 
-	Sales_data item3("0-201-78345-X", 3, 20.00);
-	print(std::cout, item3) << std::endl;
+	cout << "\n3. complete parameters: " << endl;
+	cout << "----------------" << endl;
+	Sales_data s3("CPP-Primer-5th", 3, 25.8);
 
-	Sales_data item4(std::cin);
-	print(std::cout, item4) << std::endl;
+	cout << "\n4. use istream as parameter: " << endl;
+	cout << "----------------" << endl;
+	Sales_data s4(std::cin);
 	return 0;
 }
