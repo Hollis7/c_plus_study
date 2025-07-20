@@ -5,10 +5,12 @@
 #include "Screen.h"
 int main()
 {
-    Window_mgr wm; // 创建一个Window_mgr对象
-    wm.display(0); // 显示第一个屏幕
-    wm.clear(0);  // 清除第一个屏幕的内容
-    wm.display(0); // 再次显示第一个屏幕，应该是空的
+    Screen::pos ht = 3, wd = 4;
+    Screen screen(ht, wd, '#'); // 创建一个10行20列的屏
+
+    Window_mgr wm;
+    Window_mgr::ScreenIndex idx = wm.addScreen(screen);
+    wm.display(idx); // 显示屏幕内容
 
     return 0;
 }

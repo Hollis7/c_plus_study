@@ -3,23 +3,13 @@
 #include <string>
 #include <cctype>
 #include "sales_data.h"
+#include "Account.h"
 using namespace std;
+
 int main()
 {
-	cout << "1. default way: " << endl;
-	cout << "----------------" << endl;
-	Sales_data s1;
-
-	cout << "\n2. use std::string as parameter: " << endl;
-	cout << "----------------" << endl;
-	Sales_data s2("CPP-Primer-5th");
-
-	cout << "\n3. complete parameters: " << endl;
-	cout << "----------------" << endl;
-	Sales_data s3("CPP-Primer-5th", 3, 25.8);
-
-	cout << "\n4. use istream as parameter: " << endl;
-	cout << "----------------" << endl;
-	Sales_data s4(std::cin);
+	double rate = Account::rate(); // 获取当前利率
+	cout << "Current interest rate: " << rate << endl;
+	cout<<"Hello, C++17!" << endl;
 	return 0;
 }
