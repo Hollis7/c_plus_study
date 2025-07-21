@@ -29,11 +29,11 @@ target_compile_options(exercise7_1 PRIVATE -g -O0)
 
 
 
-# # 集中管理目标名称
-# set(EXECUTABLE_TARGETS  exercise7)
-# # 批量添加可执行文件
-# foreach(target ${EXECUTABLE_TARGETS})
-#     add_executable(${target} src/ch7/${target}.cpp)
-#     target_include_directories(${target} PRIVATE ${MYLIB_INCLUDE_DIR})
-#     target_compile_options(${target} PRIVATE -g -O0)
-# endforeach()
+# 集中管理目标名称
+set(EXECUTABLE_TARGETS  ex8)
+# 批量添加可执行文件
+foreach(target ${EXECUTABLE_TARGETS})
+    add_executable(${target} src/ch8/${target}.cpp)
+    target_include_directories(${target} PRIVATE ${MYLIB_INCLUDE_DIR})
+    target_compile_options(${target} PRIVATE -g -O0)
+endforeach()
